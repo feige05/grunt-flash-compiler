@@ -77,6 +77,7 @@ module.exports = function(grunt) {
         var options = this.options({
             flashVersion: 11.2,
             swfTarget: 15,
+            src: 'src/flash',
             sdk: env.FLEX_HOME
         });
 
@@ -99,7 +100,7 @@ module.exports = function(grunt) {
 
     function generateArgs(options) {
         var arr = [
-            '-compiler.source-path=src/flash',
+            '-compiler.source-path=' + options.src,
             '-compiler.library-path+=' + options.sdk + '/frameworks/libs',
             '-default-background-color=0x000000',
             '-default-frame-rate=30',

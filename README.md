@@ -19,6 +19,7 @@ flash: {
             '-define+=JWPLAYER::version,\'' + projects.version + '\''
         ],
         sdk: env.FLEX_HOME,
+        src: 'src/flash',
         ascshdPort: 11124
     },
     debug : {
