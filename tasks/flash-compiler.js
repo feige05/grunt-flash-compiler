@@ -75,8 +75,8 @@ module.exports = function(grunt) {
         var task = this;
 
         var options = this.options({
-            flashVersion: 11.2,
-            swfTarget: 15,
+            flashVersion: '15.0',
+            swfTarget: 26,
             src: 'src/flash',
             sdk: env.FLEX_HOME
         });
@@ -102,6 +102,7 @@ module.exports = function(grunt) {
         var arr = [
             '-compiler.source-path=' + options.src,
             '-compiler.library-path+=' + options.sdk + '/frameworks/libs',
+            '-compiler.external-library-path=' + options.sdk + '/frameworks/libs/player/' + options.flashVersion + '/playerglobal.swc',
             '-default-background-color=0x000000',
             '-default-frame-rate=30',
             '-target-player=' + options.flashVersion,
